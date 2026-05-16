@@ -1,6 +1,14 @@
 #### Blocking index ####
 # Blocking magnitude calculation method used in the NOAA GFDL TM90 code #
 
+
+# Module 
+import numpy as np
+import xarray as xr
+
+from glob import glob
+from scipy import ndimage
+
 # JJA data open
 Glist=sorted(glob('/ERA5/hourly/lev/*/06/*/geopotential/500.nc')+glob('/ERA5/hourly/lev/*/07/*/geopotential/500.nc')+glob('/ERA5/hourly/lev/*/08/*/geopotential/500.nc'))
 gp=xr.open_mfdataset(Glist, chunks={"time": 24})
