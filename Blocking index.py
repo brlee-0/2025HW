@@ -2,7 +2,7 @@
 # Blocking magnitude calculation method used in the NOAA GFDL TM90 code #
 
 # JJA data open
-Glist=sorted(glob('/land1/ERA5/hourly/lev/*/06/*/geopotential/500.nc')+glob('/land1/ERA5/hourly/lev/*/07/*/geopotential/500.nc')+glob('/land1/ERA5/hourly/lev/*/08/*/geopotential/500.nc'))
+Glist=sorted(glob('/ERA5/hourly/lev/*/06/*/geopotential/500.nc')+glob('/ERA5/hourly/lev/*/07/*/geopotential/500.nc')+glob('/ERA5/hourly/lev/*/08/*/geopotential/500.nc'))
 gp=xr.open_mfdataset(Glist, chunks={"time": 24})
 
 # Blocking index domain used in this study
